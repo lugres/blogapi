@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "dj_rest_auth",
     "dj_rest_auth.registration",
+    "drf_spectacular",
     # Local
     "accounts",
     "posts",
@@ -149,6 +150,7 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication",
     ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
 CORS_ORIGIN_WHITELIST = (
@@ -181,3 +183,10 @@ LOGIN_URL = "rest_login"
 # ACCOUNT_EMAIL_REQUIRED = False
 # ACCOUNT_EMAIL_VERIFICATION = "none"
 # ACCOUNT_AUTHENTICATION_METHOD = "username"
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Blog API Project",
+    "DESCRIPTION": "A sample blog to learn about DRF",
+    "VERSION": "1.0.0",
+    # OTHER SETTINGS
+}
